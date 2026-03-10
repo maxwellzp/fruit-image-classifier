@@ -6,3 +6,6 @@ dataset/*
 models/
 !dataset/.gitkeep
 
+# Python Virtual Environment
+.venv/
+
