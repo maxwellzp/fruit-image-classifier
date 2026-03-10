@@ -1,0 +1,8 @@
+# Application Dataset
+dataset/*
+!dataset/.gitkeep
+
+# Models
+models/
+!dataset/.gitkeep
+
