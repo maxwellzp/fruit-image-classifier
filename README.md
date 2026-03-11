@@ -10,6 +10,20 @@ For this project I created my own dataset:
 - 100 banana photos
 - 100 mandarin photos
 
+Dataset structure:
+
+```
+dataset/
+   train/
+      apple/
+      banana/
+      mandarin/
+   val/
+      apple/
+      banana/
+      mandarin/
+```
+
 ## Training
 
 Train model:
