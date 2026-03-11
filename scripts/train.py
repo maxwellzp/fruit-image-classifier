@@ -1,18 +1,28 @@
 from ultralytics import YOLO
 from pathlib import Path
+import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 
+DATASET = ROOT / "dataset"
+MODELS = ROOT / "models"
+RUNS = ROOT / "runs"
+
+def copy_best_model():
+    src_model = "runs/fruit_classifier/weights/best.pt"
+    dst_model = MODELS / "fruit_classifier.pt"
+    shutil.copy(src_model, dst_model)
+
 def train():
-  model = YOLO("yolo26n-cls.pt")
+  model = YOLO(ROOT / "pretrained/yolo26n-cls.pt")
 
   model.train(
-    data= ROOT / "dataset",
+    data= DATASET,
     epochs=50,
     batch=8,
     imgsz=224,
     device="cpu",
-    project=ROOT / "runs",
+    project=RUNS,
     name="fruit_classifier",
     exist_ok=True,
   )
@@ -21,6 +31,7 @@ def train():
 
 if __name__ == "__main__":
   train()
+  copy_best_model()
 
 # 50 epochs completed in 0.897 hours.
 # Optimizer stripped from /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/last.pt, 3.2MB
