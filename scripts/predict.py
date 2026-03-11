@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = "runs/fruit_classifier/weights/best.pt"
+MODEL_PATH = "models/fruit_classifier.pt"
 TEST_DIR = ROOT / "tests/images"
 
 def predict():
@@ -27,16 +27,15 @@ if __name__ == "__main__":
 
 # (.venv) maksim@maksim-pc:~/fruit-image-classifier$ python3 scripts/predict.py 
 
-# image 1/1 /home/maksim/fruit-image-classifier/tests/images/banana.jpg: 224x224 banana 1.00, apple 0.00, mandarin 0.00, 24.3ms
-# Speed: 86.5ms preprocess, 24.3ms inference, 0.1ms postprocess per image at shape (1, 3, 224, 224)
+# image 1/1 /home/maksim/fruit-image-classifier/tests/images/banana.jpg: 224x224 banana 1.00, apple 0.00, mandarin 0.00, 13.9ms
+# Speed: 82.4ms preprocess, 13.9ms inference, 0.1ms postprocess per image at shape (1, 3, 224, 224)
 # banana.jpg -> banana (1.00)
 
-# image 1/1 /home/maksim/fruit-image-classifier/tests/images/mandarin.jpg: 224x224 mandarin 1.00, apple 0.00, banana 0.00, 8.9ms
-# Speed: 83.7ms preprocess, 8.9ms inference, 0.0ms postprocess per image at shape (1, 3, 224, 224)
+# image 1/1 /home/maksim/fruit-image-classifier/tests/images/mandarin.jpg: 224x224 mandarin 1.00, apple 0.00, banana 0.00, 9.0ms
+# Speed: 83.0ms preprocess, 9.0ms inference, 0.0ms postprocess per image at shape (1, 3, 224, 224)
 # mandarin.jpg -> mandarin (1.00)
 
-# image 1/1 /home/maksim/fruit-image-classifier/tests/images/apple.jpg: 224x224 apple 1.00, mandarin 0.00, banana 0.00, 8.6ms
-# Speed: 84.6ms preprocess, 8.6ms inference, 0.0ms postprocess per image at shape (1, 3, 224, 224)
+# image 1/1 /home/maksim/fruit-image-classifier/tests/images/apple.jpg: 224x224 apple 1.00, mandarin 0.00, banana 0.00, 9.0ms
+# Speed: 79.6ms preprocess, 9.0ms inference, 0.0ms postprocess per image at shape (1, 3, 224, 224)
 # apple.jpg -> apple (1.00)
-# (.venv) maksim@maksim-pc:~/fruit-image-classifier$ 
 

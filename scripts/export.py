@@ -4,7 +4,7 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 
-MODEL = ROOT / "runs/fruit_classifier/weights/best.pt"
+MODEL = ROOT / "models/fruit_classifier.pt"
 MODELS_DIR = ROOT / "models"
 
 def export():
@@ -22,22 +22,20 @@ def export():
 if __name__ == "__main__":
     export()
 
-
-
 # (.venv) maksim@maksim-pc:~/fruit-image-classifier$ python3 scripts/export.py 
 # Ultralytics 8.4.21 🚀 Python-3.12.3 torch-2.10.0+cu128 CPU (Intel Core i5-4440 3.10GHz)
 # YOLO26n-cls summary (fused): 47 layers, 1,529,867 parameters, 0 gradients, 3.2 GFLOPs
 
-# PyTorch: starting from '/home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best.pt' with input shape (1, 3, 224, 224) BCHW and output shape(s) (1, 3) (3.0 MB)
+# PyTorch: starting from '/home/maksim/fruit-image-classifier/models/fruit_classifier.pt' with input shape (1, 3, 224, 224) BCHW and output shape(s) (1, 3) (3.0 MB)
 
 # NCNN: starting export with NCNN 1.0.20260114 and PNNX 20260112...
-# pnnxparam = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model.pnnx.param
-# pnnxbin = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model.pnnx.bin
-# pnnxpy = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model_pnnx.py
-# pnnxonnx = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model.pnnx.onnx
-# ncnnparam = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model.ncnn.param
-# ncnnbin = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model.ncnn.bin
-# ncnnpy = /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model/model_ncnn.py
+# pnnxparam = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model.pnnx.param
+# pnnxbin = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model.pnnx.bin
+# pnnxpy = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model_pnnx.py
+# pnnxonnx = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model.pnnx.onnx
+# ncnnparam = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model.ncnn.param
+# ncnnbin = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model.ncnn.bin
+# ncnnpy = /home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model/model_ncnn.py
 # fp16 = 0
 # optlevel = 2
 # device = cpu
@@ -76,12 +74,11 @@ if __name__ == "__main__":
 # ############# pass_level5
 # ############# pass_ncnn
 # insert_reshape_global_pooling_forward torch.flatten_14 113
-# NCNN: export success ✅ 1.5s, saved as '/home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model' (5.9 MB)
+# NCNN: export success ✅ 1.7s, saved as '/home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model' (5.9 MB)
 
-# Export complete (1.6s)
-# Results saved to /home/maksim/fruit-image-classifier/runs/fruit_classifier/weights
-# Predict:         yolo predict task=classify model=/home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model imgsz=224 
-# Validate:        yolo val task=classify model=/home/maksim/fruit-image-classifier/runs/fruit_classifier/weights/best_ncnn_model imgsz=224 data=/home/maksim/fruit-image-classifier/dataset  
+# Export complete (1.8s)
+# Results saved to /home/maksim/fruit-image-classifier/models
+# Predict:         yolo predict task=classify model=/home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model imgsz=224 
+# Validate:        yolo val task=classify model=/home/maksim/fruit-image-classifier/models/fruit_classifier_ncnn_model imgsz=224 data=/home/maksim/fruit-image-classifier/dataset  
 # Visualize:       https://netron.app
 # (.venv) maksim@maksim-pc:~/fruit-image-classifier$ 
-
