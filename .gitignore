@@ -1,11 +1,28 @@
-# Application Dataset
+# Dataset
 dataset/*
 !dataset/.gitkeep
 
-# Models
-models/
-!dataset/.gitkeep
+# Trained and exported models (generated artifacts)
+models/*
+!models/.gitkeep
+
+# Pretrained models (downloaded artifacts)
+pretrained/*
+!pretrained/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
 # Python Virtual Environment
 .venv/
+
+# Training outputs
+runs/
+
+# Test images
+tests/images/*
+!tests/images/.gitkeep
 
